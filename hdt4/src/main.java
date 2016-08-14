@@ -9,25 +9,36 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
  * @author arriaza96
  */
 public class main {    
+    static StackFactory fabrica = new StackFactory();
+    static Stack elstack = null;
+    static Scanner userInput = new Scanner(System.in);
 
+    public static void pedir(){
+    System.out.print("Que tipo de Stack? (ArrayList/Vector)");
+    if (userInput.hasNextLine()){
+        String tipoStack = userInput.nextLine();
+
+            elstack = fabrica.makeStack(tipoStack);
+    }
+    }
     /**
      *
      * @param args
      */
     public static void main(String args[]) {
-        String temp = "12+4*3+";
         calculadora calc = new calculadora();
         String linea = "";
     
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\prueba.txt"));
+            br = new BufferedReader(new FileReader(System.getProperty("user.dir") + "\\operacion.txt"));
 
             linea = br.readLine();
 
@@ -41,8 +52,8 @@ public class main {
                 ex.printStackTrace();
             }
         }
-        
-        Double resp = calc.eval(linea);
+        pedir();
+        Double resp = calc.eval(linea, elstack);
         System.out.println("El resultado es: "+resp);
     }
 }
