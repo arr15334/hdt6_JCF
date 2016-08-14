@@ -1,6 +1,4 @@
 
-import java.util.Scanner;
-
 /*
  * UVG - Algoritmos y Estructuras de Datos
  * Calculadora que utiliza el Stack para hacer un calculo Postfix
@@ -12,22 +10,9 @@ import java.util.Scanner;
  * @author Alejandro Chaclan
  */
 public class calculadora {
-    StackFactory fabrica = new StackFactory();
-    Stack elstack = null;
-    Scanner userInput = new Scanner(System.in);
-
-    public void pedir(){
-    System.out.print("Que tipo de Stack? (ArrayList/Vector)");
-    if (userInput.hasNextLine()){
-        String tipoStack = userInput.nextLine();
-
-            elstack = fabrica.makeStack(tipoStack);
-    }
-    }
+   
     
-    StackArrayList<Double> stack = new StackArrayList();
-    //StackVector<Double> stack = new StackVector();
-    
+     
     /**
      *
      */
