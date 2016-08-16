@@ -17,16 +17,29 @@ import java.util.Scanner;
  */
 public class main {    
     static StackFactory fabrica = new StackFactory();
+    static ListFactory fabricaL = new ListFactory();
     static Stack elstack = null;
+    static List laLista = null;
     static Scanner userInput = new Scanner(System.in);
 
     public static void pedir(){
-    System.out.print("Que tipo de Stack? (ArrayList/Vector)");
-    if (userInput.hasNextLine()){
-        String tipoStack = userInput.nextLine();
-
-            elstack = fabrica.makeStack(tipoStack);
-    }
+        System.out.print("¿Que tipo de Stack? (ArrayList/Vector)");
+        if (userInput.hasNextLine()){
+            String tipoStack = userInput.nextLine();
+            if(tipoStack.equals("Arraylist") || tipoStack.equals("Vector")){
+                elstack = fabrica.makeStack(tipoStack);
+            }else{
+                if(tipoStack.equals("Listas")){
+                    System.out.print("¿Que tipo de Lista? (Single/Double/Circular)");
+                    if(userInput.hasNextLine()){
+                        String tipoLista = userInput.nextLine();
+                        if(tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){    
+                            laLista = fabricaL.makeLista(tipoLista);
+                         }
+                    }
+                }
+            }   
+        }
     }
     /**
      *
