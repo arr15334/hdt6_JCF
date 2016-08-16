@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.List;
 
 /**
  *
@@ -18,15 +19,16 @@ import java.util.Scanner;
 public class main {    
     static StackFactory fabrica = new StackFactory();
     static ListFactory fabricaL = new ListFactory();
+    static StackL unalista = new StackL();
     static Stack elstack = null;
-    static List laLista = null;
+    static List<Double> laLista = null;
     static Scanner userInput = new Scanner(System.in);
 
     public static void pedir(){
-        System.out.print("¿Que tipo de Stack? (ArrayList/Vector)");
+        System.out.print("¿Que tipo de Stack? (ArrayList/Vector/Listas)");
         if (userInput.hasNextLine()){
             String tipoStack = userInput.nextLine();
-            if(tipoStack.equals("Arraylist") || tipoStack.equals("Vector")){
+            if(tipoStack.equals("ArrayList") || tipoStack.equals("Vector")){
                 elstack = fabrica.makeStack(tipoStack);
             }else{
                 if(tipoStack.equals("Listas")){
@@ -34,7 +36,7 @@ public class main {
                     if(userInput.hasNextLine()){
                         String tipoLista = userInput.nextLine();
                         if(tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){    
-                            laLista = fabricaL.makeLista(tipoLista);
+                            elstack = (Stack) unalista.makeStack(tipoLista);
                          }
                     }
                 }

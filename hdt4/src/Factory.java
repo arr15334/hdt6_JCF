@@ -10,4 +10,15 @@
  */
 public class Factory {
     
+
+    public static AbstractFactory makeStack(String factoryType){
+        if(factoryType.equalsIgnoreCase("Stack")){
+            return new StackFactory();
+        }
+        if(factoryType.equalsIgnoreCase("List")){
+            return new ListFactory();
+        }
+        return null;
+    }
 }
+

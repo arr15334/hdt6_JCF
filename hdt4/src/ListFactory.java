@@ -6,21 +6,21 @@
 
 /**
  *
- * @author User
+ * @author Rodrigo Arriaza y Sebastian Galindo
  */
-public class ListFactory {
-     public List makeLista(String listType){ 
+public class ListFactory extends AbstractFactory {
+     public <E> Stack<E> makeStack(String listType){ 
         //Stack newStack = null;
         if (listType.equals("Single")){ 
-            SinglyLinkedList<Double> laLista = new SinglyLinkedList();
+            SinglyLinkedList<E> laLista = new SinglyLinkedList();
             return laLista;    
         }else
          if (listType.equals("Double")){
-            DoublyLinkedList<Double> laLista = new DoublyLinkedList();
+            DoublyLinkedList<E> laLista = new DoublyLinkedList();
             return laLista;    
         }else
          if (listType.equals("Circular")){
-            CircularList<Double> laLista = new CircularList();
+            CircularList<E> laLista = new CircularList();
             return laLista;     
         }else{
              return null;

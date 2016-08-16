@@ -1,7 +1,7 @@
 
 import java.util.Iterator;
 
-public class CircularList<E> extends AbstractList<E>{
+public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
 protected Node<E> tail; 
 protected int count;
@@ -12,6 +12,18 @@ public CircularList()
    tail = null;
    count = 0;
 }
+
+@Override
+    public void push(E item) {
+        Node<E> temp = new Node<E>(item);
+        if(tail == null){
+            tail = temp;
+        }else{
+            temp.setNext(tail.next());
+            tail.setNext(temp);
+        }
+        count++;
+    }
 
 public void addFirst(E value)
 // pre: value non-null
@@ -37,7 +49,22 @@ public void addLast(E value)
    addFirst(value);
    tail = tail.next();
 }
-
+@Override
+    public E pop() {
+        E item = null;
+        if (size() > 0){
+            Node<E> head = tail.next();
+            if (head != null){
+                tail.setNext(head.next());
+                item = head.data;
+            }else {
+                item = tail.data;
+                tail = null;
+            }
+        }else return null;
+        count--;
+        return item;
+    }
 
 // lo dificil es quitar el elemento de la cola
 
@@ -140,6 +167,16 @@ public E removeLast()
 
     @Override
     public void add(int i, E o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public E peek() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean empty() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -1,7 +1,7 @@
 
 import java.util.Iterator;
 
-public class SinglyLinkedList<E> extends AbstractList<E>
+public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
 {
 
    protected int count; // list size
@@ -65,9 +65,7 @@ public class SinglyLinkedList<E> extends AbstractList<E>
 	  
 	  count++;
 	  
-   }
-   
-   
+   }   
    public boolean contains(E value)
    // pre: value is not null
    // post: returns true iff value is found in list
@@ -95,6 +93,16 @@ public void reset()
 current = head;
 }
 
+    public void push(E item){
+        addFirst(item);
+    }
+    public E pop (){
+        return removeFirst();
+    }
+    public E peek () {
+        return head.data;
+    }
+    
     @Override
     public void clear() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -122,7 +130,7 @@ current = head;
 
     @Override
     public E remove() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     return null;    
     }
 
     @Override
@@ -163,5 +171,10 @@ current = head;
     @Override
     public Iterator<E> iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean empty() {
+        return size()==0;
     }
 }
