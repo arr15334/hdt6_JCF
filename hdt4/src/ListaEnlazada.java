@@ -1,7 +1,7 @@
 import java.util.Iterator;
 
 /**
- * Created by Chromz on 14-Aug-16.
+ * @author Rodrigo Arriaza
  */
 public class ListaEnlazada<E> extends AbstractList<E> implements Stack<E>{
 

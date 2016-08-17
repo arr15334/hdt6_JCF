@@ -19,7 +19,6 @@ import java.util.List;
 public class main {    
     static StackFactory fabrica = new StackFactory();
     static ListFactory fabricaL = new ListFactory();
-    static StackL unalista = new StackL();
     static Stack elstack = null;
     static List<Double> laLista = null;
     static Scanner userInput = new Scanner(System.in);
@@ -36,7 +35,7 @@ public class main {
                     if(userInput.hasNextLine()){
                         String tipoLista = userInput.nextLine();
                         if(tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){    
-                            elstack = (Stack) unalista.makeStack(tipoLista);
+                            elstack = fabricaL.makeStack(tipoLista);
                          }
                     }
                 }

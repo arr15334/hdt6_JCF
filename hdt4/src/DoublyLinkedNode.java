@@ -22,4 +22,20 @@ public DoublyLinkedNode(E v)
 {
     this(v,null,null);
 }
+public DoublyLinkedNode<E> next(){
+    return nextElement;
+}
+public DoublyLinkedNode<E> previous(){
+    return previousElement;
+}
+public void setNext(DoublyLinkedNode<E> item){
+        nextElement = item;
+    }
+public E value(){
+        return data;
+    }
+public void setPrevious(DoublyLinkedNode<E> item){
+        previousElement = item;
+    }
+
 }

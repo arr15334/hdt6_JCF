@@ -40,7 +40,18 @@ public void addLast(E value)
    if (head == null) head = tail;
    count++;
 }
-
+@Override
+    public E removeFirst() {
+        DoublyLinkedNode<E> temp = head;
+        head = head.next();
+        if (head == null){
+            tail = null;
+        }else{
+            head.setPrevious(null);
+        }
+        count--;
+        return temp.value();
+    }
  public E removeLast()
 // pre: list is not empty
 // post: removes value from tail of list
@@ -67,7 +78,7 @@ public void addLast(E value)
     }
     @Override
     public int size() {
-        return 1    ;
+        return count;
     }
 
     @Override
@@ -85,9 +96,7 @@ public void addLast(E value)
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public E removeFirst() { return null;
-    }
+    
 
     @Override
     public E remove(E value) {

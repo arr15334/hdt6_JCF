@@ -14,17 +14,9 @@ public CircularList()
 }
 
 @Override
-    public void push(E item) {
-        Node<E> temp = new Node<E>(item);
-        if(tail == null){
-            tail = temp;
-        }else{
-            temp.setNext(tail.next());
-            tail.setNext(temp);
-        }
-        count++;
+    public E getFirst() {
+        return tail.value();
     }
-
 public void addFirst(E value)
 // pre: value non-null
 // post: adds element to head of list
@@ -39,8 +31,6 @@ public void addFirst(E value)
    }
    count++;
 }
-
-
 public void addLast(E value)
 // pre: value non-null
 // post: adds element to tail of list
@@ -50,7 +40,7 @@ public void addLast(E value)
    tail = tail.next();
 }
 @Override
-    public E pop() {
+    public E removeFirst() {
         E item = null;
         if (size() > 0){
             Node<E> head = tail.next();
@@ -65,10 +55,7 @@ public void addLast(E value)
         count--;
         return item;
     }
-
-// lo dificil es quitar el elemento de la cola
-
-public E removeLast()
+    public E removeLast()
 // pre: !isEmpty()
 // post: returns and removes value from tail of list
 {
@@ -88,8 +75,29 @@ public E removeLast()
    count--;
    return temp.value();
 }
+@Override
+    public int size() {
+        return count;
+    }
+    //**************estos son las implementaciones del Stack<E>
+   @Override
+    public void push(E item) {
+        addFirst(item);
+    }
+@Override
+    public E pop() {
+        return removeFirst();
+    }
+    @Override
+    public E peek() {
+        return getFirst();
+    }
 
-
+ @Override
+    public E getLast() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+//*************************************estos metodos no tienen implementacion
     @Override
     public E remove(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -100,28 +108,10 @@ public E removeLast()
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public void clear() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E getFirst() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E removeFirst() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -167,11 +157,6 @@ public E removeLast()
 
     @Override
     public void add(int i, E o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public E peek() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
