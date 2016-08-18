@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author arriaza96
+ * @author Rodrigo Arriaza y Sebastian Galindo
  */
 public class main {
     
@@ -61,7 +61,8 @@ public class main {
      * @param args
      */
     public static void main(String args[]) {
-        calculadora calc = new calculadora();
+        calculadora calc = calculadora.getInstance();
+        
         String linea = "";
     
         BufferedReader br = null;

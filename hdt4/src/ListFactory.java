@@ -14,7 +14,7 @@ public class ListFactory extends AbstractFactory {
      *
      * @param <E>
      * @param listType
-     * @return
+     * @return una lista como un stack
      */
     public <E> Stack<E> makeStack(String listType){ 
         //Stack newStack = null;

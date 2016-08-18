@@ -8,7 +8,7 @@ public class StackFactory extends AbstractFactory{
     /**
      *
      * @param stackType
-     * @return
+     * @return un stack de tipo vector o arraylist
      */
     public Stack makeStack(String stackType){ 
         Stack newStack = null;

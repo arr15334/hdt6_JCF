@@ -14,10 +14,17 @@ public class calculadora {
     
      
     /**
-     *
+     * aqui viene la implementacion del patron Singleton
      */
-    public calculadora() {
+    private calculadora() { //se hace privado el constructor
+     
     }
+    private static calculadora calculadoraInstance = new calculadora();
+    public static calculadora getInstance (){
+        return calculadoraInstance;
+    }
+    
+    
     
     //Funcion para evaluar el postfix
 

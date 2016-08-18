@@ -4,7 +4,7 @@ import java.util.Iterator;
 /**
  *
  * @author arriaza96
- * @param <E>
+ * @param <E> el tipo de dato
  */
 public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
 {
@@ -14,9 +14,6 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
      */
     protected int count; // list size
 
-    /**
-     *
-     */
     protected Node<E> head; // ref. to first element
 
     /**
@@ -37,7 +34,7 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
   
     /**
      *
-     * @param value
+     * @param value para ser anadido a la lista
      */
     public void addFirst(E value)
   // post: value is added to beginning of list
@@ -50,7 +47,7 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
   
     /**
      *
-     * @return
+     * @return el primer elemento de la lista y lo quita
      */
     public E removeFirst()
   // pre: list is not empty
@@ -64,7 +61,7 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
   
     /**
      *
-     * @return
+     * @return el primer elemento de la lista sin quitarlo de ella
      */
     public E getFirst()
   // pre: list is not empty
@@ -75,7 +72,7 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
   
     /**
      *
-     * @param value
+     * @param value para ser agregado al final de la lista 
      */
     public void addLast(E value)
   // post: adds value to end of list
@@ -95,13 +92,12 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
       } else head = temp;
 	  
 	  count++;
-	  
    }   
 
     /**
      *
      * @param value
-     * @return
+     * @return verdadero si esta
      */
     public boolean contains(E value)
    // pre: value is not null
@@ -141,7 +137,7 @@ reset();
 {
 current = head;
 }
-
+//******************* implementaciones del stack
     public void push(E item){
         addFirst(item);
     }
@@ -152,9 +148,7 @@ current = head;
         return head.data;
     }
     
-    /**
-     *
-     */
+    //*****************estos metodos no necesitan ser implementados
     @Override
     public void clear() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

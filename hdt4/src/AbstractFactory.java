@@ -6,9 +6,9 @@ public abstract class AbstractFactory {
 
     /**
      *
-     * @param <E>
+     * @param <E> como tipo de dato
      * @param tipoStack
-     * @return
+     * @return un stack
      */
     public abstract <E> Stack<E> makeStack(String tipoStack);
 }

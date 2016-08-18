@@ -7,7 +7,7 @@
 /**
  *
  * @author Rodrigo Arriaza;
- * @param <E>
+ * @param <E> el tipo de dato que se va a usar
  */
 public abstract class AbstractStack<E> implements Stack<E> {
     
