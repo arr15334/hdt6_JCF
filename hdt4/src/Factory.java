@@ -10,8 +10,12 @@
  */
 public class Factory {
     
-
-    public static AbstractFactory makeStack(String factoryType){
+    /**
+     *
+     * @param factoryType
+     * @return Factory de Stacks o de Listas
+     */
+    public static AbstractFactory makeFactory(String factoryType){
         if(factoryType.equalsIgnoreCase("Stack")){
             return new StackFactory();
         }

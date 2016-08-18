@@ -24,6 +24,7 @@ public class calculadora {
     /**
      *
      * @param s
+     * @param stack
      * @return Resultado en double
      */
         public double eval(String s, Stack<Double> stack) {

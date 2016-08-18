@@ -10,6 +10,7 @@ import java.util.Vector;
 /**
  *
  * @author Rodrigo Arriaza;
+ * @param <E>
  */
 public class StackVector<E> implements Stack<E>
 {

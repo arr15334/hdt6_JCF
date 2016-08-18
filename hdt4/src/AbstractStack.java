@@ -7,6 +7,7 @@
 /**
  *
  * @author Rodrigo Arriaza;
+ * @param <E>
  */
 public abstract class AbstractStack<E> implements Stack<E> {
     

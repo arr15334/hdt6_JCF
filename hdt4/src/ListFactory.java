@@ -9,7 +9,14 @@
  * @author Rodrigo Arriaza y Sebastian Galindo
  */
 public class ListFactory extends AbstractFactory {
-     public <E> Stack<E> makeStack(String listType){ 
+ 
+    /**
+     *
+     * @param <E>
+     * @param listType
+     * @return
+     */
+    public <E> Stack<E> makeStack(String listType){ 
         //Stack newStack = null;
         if (listType.equals("Single")){ 
             SinglyLinkedList<E> laLista = new SinglyLinkedList();

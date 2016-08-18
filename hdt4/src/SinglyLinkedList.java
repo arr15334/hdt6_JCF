@@ -1,13 +1,28 @@
 
 import java.util.Iterator;
 
+/**
+ *
+ * @author arriaza96
+ * @param <E>
+ */
 public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
 {
 
-   protected int count; // list size
-   protected Node<E> head; // ref. to first element
+    /**
+     *
+     */
+    protected int count; // list size
 
-   public SinglyLinkedList()
+    /**
+     *
+     */
+    protected Node<E> head; // ref. to first element
+
+    /**
+     *
+     */
+    public SinglyLinkedList()
    // post: generates an empty list
    {
       head = null;
@@ -20,7 +35,11 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
     return count;
   }
   
-  public void addFirst(E value)
+    /**
+     *
+     * @param value
+     */
+    public void addFirst(E value)
   // post: value is added to beginning of list
   {
      // note order that things happen:
@@ -29,7 +48,11 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
      count++;
   }
   
-  public E removeFirst()
+    /**
+     *
+     * @return
+     */
+    public E removeFirst()
   // pre: list is not empty
   // post: removes and returns value from beginning of list
  {
@@ -39,14 +62,22 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
      return temp.value();
   }
   
-  public E getFirst()
+    /**
+     *
+     * @return
+     */
+    public E getFirst()
   // pre: list is not empty
   // post: returns first value in list
   {
       return head.value();
   }
   
-  public void addLast(E value)
+    /**
+     *
+     * @param value
+     */
+    public void addLast(E value)
   // post: adds value to end of list
   {
       // location for new value
@@ -66,7 +97,13 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
 	  count++;
 	  
    }   
-   public boolean contains(E value)
+
+    /**
+     *
+     * @param value
+     * @return
+     */
+    public boolean contains(E value)
    // pre: value is not null
    // post: returns true iff value is found in list
   {
@@ -79,15 +116,27 @@ public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>
       }
       return finger != null;
    }
-   protected Node<E> current;
 
-public void iterator(Node<E> t)
+    /**
+     *
+     */
+    protected Node<E> current;
+
+    /**
+     *
+     * @param t
+     */
+    public void iterator(Node<E> t)
 // post: returns an iterator that traverses a linked list
 {
 head = t;
 reset();
 }
-public void reset()
+
+    /**
+     *
+     */
+    public void reset()
 // post: iterator is reset to beginning of traversal
 {
 current = head;
@@ -103,71 +152,134 @@ current = head;
         return head.data;
     }
     
+    /**
+     *
+     */
     @Override
     public void clear() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public E getLast() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public E removeLast() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param value
+     * @return
+     */
     @Override
     public E remove(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param value
+     */
     @Override
     public void add(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public E remove() {
      return null;    
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public E get() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param value
+     * @return
+     */
     @Override
     public int indexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param value
+     * @return
+     */
     @Override
     public int lastIndexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     @Override
     public E get(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param i
+     * @param o
+     * @return
+     */
     @Override
     public E set(int i, E o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param i
+     * @param o
+     */
     @Override
     public void add(int i, E o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     @Override
     public E remove(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Iterator<E> iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

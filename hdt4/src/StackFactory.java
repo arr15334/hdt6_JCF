@@ -5,7 +5,12 @@
  */
 public class StackFactory extends AbstractFactory{
      
-     public Stack makeStack(String stackType){ 
+    /**
+     *
+     * @param stackType
+     * @return
+     */
+    public Stack makeStack(String stackType){ 
         Stack newStack = null;
         if (stackType.equals("ArrayList")){
             

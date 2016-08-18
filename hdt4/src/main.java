@@ -1,7 +1,9 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad del Valle de Guatemala
+ * Algoritmos y Estructuras de Datos
+ * Hoja de trabajo patrones de diseno
+ * Rodrigo Arriaza y Sebastian Galindo
+ * Clase principal.
  */
 
 /**
@@ -10,38 +12,50 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.List;
 
 /**
  *
  * @author arriaza96
  */
-public class main {    
-    static StackFactory fabrica = new StackFactory();
-    static ListFactory fabricaL = new ListFactory();
+public class main {
+    
+    static String tipoFabrica;
+    static Factory lafabrica = new Factory();
+    static AbstractFactory lamera;
     static Stack elstack = null;
-    static List<Double> laLista = null;
     static Scanner userInput = new Scanner(System.in);
 
     public static void pedir(){
-        System.out.print("¿Que tipo de Stack? (ArrayList/Vector/Listas)");
+        System.out.print("Que estructura de datos desea probar? (Stack/List)");
         if (userInput.hasNextLine()){
-            String tipoStack = userInput.nextLine();
-            if(tipoStack.equals("ArrayList") || tipoStack.equals("Vector")){
-                elstack = fabrica.makeStack(tipoStack);
-            }else{
-                if(tipoStack.equals("Listas")){
-                    System.out.print("¿Que tipo de Lista? (Single/Double/Circular)");
-                    if(userInput.hasNextLine()){
-                        String tipoLista = userInput.nextLine();
-                        if(tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){    
-                            elstack = fabricaL.makeStack(tipoLista);
-                         }
+            tipoFabrica = userInput.nextLine();
+            if (tipoFabrica.equals("Stack")|| tipoFabrica.equals("List")){
+                 lamera = lafabrica.makeFactory(tipoFabrica);
+            }
+        }
+        
+            if (tipoFabrica.equals("Stack")){
+                System.out.print("Que tipo quiere? (ArrayList/Vector)");
+                if (userInput.hasNextLine()){
+                    String tipoStack = userInput.nextLine();
+                    if (tipoStack.equals("Vector") || tipoStack.equals("ArrayList")){
+                        elstack = lamera.makeStack(tipoStack);
                     }
                 }
-            }   
-        }
-    }
+            } else {
+                if (tipoFabrica.equals("List")){
+                    System.out.print("Que tipo quiere? (Single/Double/Circular)");
+                    if (userInput.hasNextLine()){
+                        String tipoLista = userInput.nextLine();
+                        if (tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){
+                            elstack = lamera.makeStack(tipoLista);
+                        }
+                    }
+                }
+            }
+        } 
+    
+    
     /**
      *
      * @param args
