@@ -262,8 +262,8 @@ current = head;
 
     /**
      *
-     * @param i
-     * @return
+     * @param i la posicion
+     * @return E el elemento
      */
     @Override
     public E remove(int i) {

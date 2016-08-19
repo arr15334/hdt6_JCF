@@ -2,7 +2,7 @@
 /**
  *
  * @author arriaza96
- * @param <E>
+ * @param <E> tipo de dato
  */
 public class DoublyLinkedNode<E>
 {
@@ -43,7 +43,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @param v
+     * @param v element0
      */
     public DoublyLinkedNode(E v)
 // post: constructs a single element

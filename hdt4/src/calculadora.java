@@ -30,8 +30,8 @@ public class calculadora {
 
     /**
      *
-     * @param s
-     * @param stack
+     * @param s ecuacion postfix a evaluar
+     * @param stack el tipo de Estructura a utilizar
      * @return Resultado en double
      */
         public double eval(String s, Stack<Double> stack) {

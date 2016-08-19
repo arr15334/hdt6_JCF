@@ -25,7 +25,7 @@ public class StackArrayList<E>
 
     /**
      *
-     * @param item
+     * @param item el valor a ser anadido
      */
     public void push(E item)
 	// post: the value is added to the stack

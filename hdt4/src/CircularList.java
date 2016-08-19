@@ -39,7 +39,7 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param item que se va a agregar a la lista
+     * @param value item que se va a agregar a la lista
      */
     public void addFirst(E value)
 // pre: value non-null
@@ -58,7 +58,7 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param item que se agregara al final de la lista
+     * @param value item que se agregara al final de la lista
      */
     public void addLast(E value)
 // pre: value non-null
@@ -144,8 +144,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param i
-     * @return
+     * @param i position 
+     * @return element
      */
         @Override
     public E remove(int i) {
@@ -154,7 +154,7 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @return
+     * @return Iterator
      */
     @Override
     public Iterator<E> iterator() {
@@ -171,8 +171,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a quitar
+     * @return value
      */
     @Override
     public E remove(E value) {
@@ -180,8 +180,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
     }
 
     /**
-     *
-     * @param value
+     * 
+     * @param value a ser anadido
      */
     @Override
     public void add(E value) {
@@ -199,7 +199,7 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @return
+     * @return elemento
      */
     @Override
     public E get() {
@@ -208,8 +208,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return posicion
      */
     @Override
     public int indexOf(E value) {
@@ -218,8 +218,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return posicion
      */
     @Override
     public int lastIndexOf(E value) {
@@ -228,8 +228,8 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param i
-     * @return
+     * @param i position
+     * @return elemento
      */
     @Override
     public E get(int i) {
@@ -238,9 +238,9 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
 
     /**
      *
-     * @param i
-     * @param o
-     * @return
+     * @param i position
+     * @param o elemento
+     * @return elemento
      */
     @Override
     public E set(int i, E o) {
@@ -248,9 +248,9 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>{
     }
 
     /**
-     *
-     * @param i
-     * @param o
+     * 
+     * @param i position
+     * @param o elemento
      */
     @Override
     public void add(int i, E o) {

@@ -27,7 +27,7 @@ public class StackVector<E> implements Stack<E>
 
     /**
      *
-     * @param item
+     * @param item el item a ser anadido 
      */
     public void push(E item)
 	// post: the value is added to the stack

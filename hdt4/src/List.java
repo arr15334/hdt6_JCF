@@ -31,7 +31,7 @@ public interface List<E>
 
     /**
      *
-     * @param item a ser anadido de primero a la lista
+     * @param value item a ser anadido de primero a la lista
      */
     public void addFirst(E value);
    // post: value is added to beginning of list
@@ -145,39 +145,18 @@ public interface List<E>
    // pre: 0 <= i < size()
    // post: returns object found at that location
 
-    /**
-     *
-     * @param i
-     * @param o
-     * @return
-     */
     public E set(int i, E o);
    // pre: 0 <= i < size()
    // post: sets ith entry of list to value o;
    // returns old value
 
-    /**
-     *
-     * @param i
-     * @param o
-     */
     public void add(int i, E o);
    // pre: 0 <= i <= size()
    // post: adds ith entry of list to value o
 
-    /**
-     *
-     * @param i
-     * @return
-     */
     public E remove(int i);
    // pre: 0 <= i < size()
    // post: removes and returns object found at that location
-
-    /**
-     *
-     * @return
-     */
     public Iterator<E> iterator();
    // post: returns an iterator allowing
    // ordered traversal of elements in list
