@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author Rodrigo Arriaza y Sebastian Galindo
  * @param <E> que es el tipo de dato
  */
-public class CircularList<E> extends AbstractList<E> implements Stack<E>{
+public class CircularList<E> extends AbstractList<E> implements Stack<E>, List<E>{
 
     /**
      *

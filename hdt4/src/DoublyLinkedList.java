@@ -6,8 +6,8 @@ import java.util.Iterator;
  * @author arriaza96
  * @param <E> el tipo de dato
  */
-public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
-
+public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>, List<E>
+{
     protected int count;
     protected DoublyLinkedNode<E> head;
     protected DoublyLinkedNode<E> tail;
