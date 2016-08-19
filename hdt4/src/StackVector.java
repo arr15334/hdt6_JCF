@@ -5,7 +5,7 @@ import java.util.Vector;
 
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza y Sebastian Galindo;
  * @param <E> tipo de dato
  */
 public class StackVector<E> implements Stack<E>

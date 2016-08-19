@@ -3,7 +3,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author arriaza96
+ * @author Rodrigo Arriaza y Sebastian Galindo
  * @param <E>
  */
 public interface List<E> 

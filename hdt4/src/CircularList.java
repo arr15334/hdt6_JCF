@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author Rodrigo Arriaza y Sebastian Galindo
  * @param <E> que es el tipo de dato
  */
-public class CircularList<E> extends AbstractList<E> implements Stack<E>, List<E>{
+public class CircularList<E> extends AbstractList<E> implements  List<E>{
 
     /**
      *
@@ -119,18 +119,18 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>, List<E
         return count;
     }
     //**************estos son las implementaciones del Stack<E>
-   @Override
-    public void push(E item) {
-        addFirst(item);
-    }
-@Override
-    public E pop() {
-        return removeFirst();
-    }
-    @Override
-    public E peek() {
-        return getFirst();
-    }
+   //@Override
+   // public void push(E item) {
+     //   addFirst(item);
+    //}
+//@Override
+    //public E pop() {
+      //  return removeFirst();
+   // }
+    //@Override
+    //public E peek() {
+      //  return getFirst();
+    //}
 
     /**
      *
@@ -258,7 +258,7 @@ public class CircularList<E> extends AbstractList<E> implements Stack<E>, List<E
     }
 
     @Override
-    public boolean empty() {
+    public boolean isEmpty() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

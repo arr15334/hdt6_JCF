@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author codigo tomado de BlackBoard pero modificado
  * @param <E> el tipo de dato
  */
-public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>, List<E>
+public class SinglyLinkedList<E> extends AbstractList<E> implements List<E>
 {
 
     /**
@@ -280,7 +280,7 @@ current = head;
     }
 
     @Override
-    public boolean empty() {
+    public boolean isEmpty() {
         return size()==0;
     }
 }

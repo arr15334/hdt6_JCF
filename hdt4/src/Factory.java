@@ -6,7 +6,7 @@
 
 /**
  *
- * @author User
+ * @author Rodrigo Arriaza y Sebastián Galindo
  */
 public class Factory {
     

@@ -3,10 +3,10 @@ import java.util.Iterator;
 
 /**
  *
- * @author arriaza96
+ * @author Rodrigo Arriaza y Sebastian Galindo
  * @param <E> el tipo de dato
  */
-public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>, List<E>
+public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
 {
     protected int count;
     protected DoublyLinkedNode<E> head;
@@ -168,7 +168,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>, L
     }
 
     @Override
-    public boolean empty() {
+    public boolean isEmpty() {
         return size()==0;
     }
 }

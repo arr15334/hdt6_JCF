@@ -1,7 +1,7 @@
 
 /**
  *
- * @author arriaza96
+ * @author Rodrigo Arriaza y Sebastián Galindo
  * @param <E> tipo de dato
  */
 public class DoublyLinkedNode<E>

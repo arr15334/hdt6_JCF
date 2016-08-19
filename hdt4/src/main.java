@@ -1,7 +1,7 @@
 /*
  * Universidad del Valle de Guatemala
  * Algoritmos y Estructuras de Datos
- * Hoja de trabajo patrones de diseno
+ * Hoja de trabajo 4: Patrones de diseno
  * Rodrigo Arriaza y Sebastian Galindo
  * Clase principal.
  */
@@ -26,7 +26,7 @@ public class main {
     static Scanner userInput = new Scanner(System.in);
 
     public static void pedir(){
-        System.out.print("Que estructura de datos desea probar? (Stack/List)");
+        System.out.print("¿Que estructura de datos desea probar? (Stack/List)");
         if (userInput.hasNextLine()){
             tipoFabrica = userInput.nextLine();
             if (tipoFabrica.equals("Stack")|| tipoFabrica.equals("List")){
@@ -34,26 +34,26 @@ public class main {
             }
         }
         
-            if (tipoFabrica.equals("Stack")){
-                System.out.print("Que tipo quiere? (ArrayList/Vector)");
-                if (userInput.hasNextLine()){
-                    String tipoStack = userInput.nextLine();
-                    if (tipoStack.equals("Vector") || tipoStack.equals("ArrayList")){
-                        elstack = lamera.makeStack(tipoStack);
-                    }
-                }
-            } else {
-                if (tipoFabrica.equals("List")){
-                    System.out.print("Que tipo quiere? (Single/Double/Circular)");
-                    if (userInput.hasNextLine()){
-                        String tipoLista = userInput.nextLine();
-                        if (tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){
-                            elstack = lamera.makeStack(tipoLista);
-                        }
-                    }
+        if (tipoFabrica.equals("Stack")){
+            System.out.print("¿Que tipo quiere de Stack desea utilizar? (ArrayList/Vector)");
+            if (userInput.hasNextLine()){
+                String tipoStack = userInput.nextLine();
+                if (tipoStack.equals("Vector") || tipoStack.equals("ArrayList")){
+                    elstack = lamera.makeStack(tipoStack);
                 }
             }
-        } 
+        } else {
+            if (tipoFabrica.equals("List")){
+                System.out.print("Que tipo quiere? (Single/Double/Circular)");
+                if (userInput.hasNextLine()){
+                    String tipoLista = userInput.nextLine();
+                    if (tipoLista.equals("Single") || tipoLista.equals("Double") || tipoLista.equals("Circular")){
+                        elstack = lamera.makeStack(tipoLista);
+                     }
+                }
+            }
+        }
+    } 
     
     
     /**

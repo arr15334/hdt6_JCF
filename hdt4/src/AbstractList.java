@@ -2,7 +2,7 @@
 
 /**
  *
- * @author arriaza96
+ * @author Rodrigo Arriaza y Sebastián Galindo.
  * @param <E> el tipo de dato
  */
 public abstract class AbstractList<E>

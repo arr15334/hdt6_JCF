@@ -19,15 +19,15 @@ public class ListFactory extends AbstractFactory {
     public <E> Stack<E> makeStack(String listType){ 
         //Stack newStack = null;
         if (listType.equals("Single")){ 
-            SinglyLinkedList<E> laLista = new SinglyLinkedList();
+            StackSinglyLinkedList<E> laLista = new StackSinglyLinkedList();
             return laLista;    
         }else
          if (listType.equals("Double")){
-            DoublyLinkedList<E> laLista = new DoublyLinkedList();
+            StackDoublyLinkedList<E> laLista = new StackDoublyLinkedList();
             return laLista;    
         }else
          if (listType.equals("Circular")){
-            CircularList<E> laLista = new CircularList();
+            StackCircularList<E> laLista = new StackCircularList();
             return laLista;     
         }else{
              return null;
