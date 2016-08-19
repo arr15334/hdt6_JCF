@@ -4,28 +4,14 @@ import java.util.Iterator;
 /**
  *
  * @author arriaza96
- * @param <E>
+ * @param <E> el tipo de dato
  */
 public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
 
-    /**
-     *
-     */
     protected int count;
-
-    /**
-     *
-     */
     protected DoublyLinkedNode<E> head;
-
-    /**
-     *
-     */
     protected DoublyLinkedNode<E> tail;
-
-    /**
-     *
-     */
+   
     public DoublyLinkedList()
 // post: constructs an empty list
 {
@@ -36,7 +22,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
 
     /**
      *
-     * @param value
+     * @param value a ser anadido
      */
     public void addFirst(E value)
 // pre: value is not null
@@ -51,7 +37,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
 
     /**
      *
-     * @param value
+     * @param value para anadir al final
      */
     public void addLast(E value)
 // pre: value is not null
@@ -66,7 +52,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
 
     /**
      *
-     * @return
+     * @return el primer elemento y lo quita de la lista
      */
     @Override
     public E removeFirst() {
@@ -83,7 +69,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
 
     /**
      *
-     * @return
+     * @return el ultimo elemento y lo quita de la lista 
      */
     public E removeLast()
 // pre: list is not empty
@@ -114,130 +100,68 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements Stack <E>{
         return count;
     }
 
-    /**
-     *
-     */
+    //*****************************estos metodos no fueron implementados
     @Override
     public void clear() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public E getFirst() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     *
-     * @return
-     */
+    
     @Override
     public E getLast() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     *
-     * @param value
-     * @return
-     */
+    
     @Override
     public E remove(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     *
-     * @param value
-     */
+    
     @Override
     public void add(E value) {    }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public E get() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param value
-     * @return
-     */
     @Override
     public int indexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param value
-     * @return
-     */
     @Override
     public int lastIndexOf(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param i
-     * @return
-     */
     @Override
     public E get(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param i
-     * @param o
-     * @return
-     */
     @Override
     public E set(int i, E o) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @param i
-     * @param o
-     */
     @Override
     public void add(int i, E o) {    }
 
-    /**
-     *
-     * @param i
-     * @return
-     */
     @Override
     public E remove(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public Iterator<E> iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public E remove() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

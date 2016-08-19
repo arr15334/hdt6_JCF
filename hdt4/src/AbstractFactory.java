@@ -1,6 +1,6 @@
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza y Sebastian Galindo;
  */
 public abstract class AbstractFactory {
 

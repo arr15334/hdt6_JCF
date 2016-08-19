@@ -11,41 +11,41 @@ public interface List<E>
 
     /**
      *
-     * @return
+     * @return el tamano
      */
     public int size();
    // post: returns number of elements in list
 
     /**
      *
-     * @return
+     * @return verdadero si esta vacio
      */
     public boolean isEmpty();
    // post: returns true iff list has no elements
 
     /**
-     *
+     * limpia la lista
      */
     public void clear();
    // post: empties list
 
     /**
      *
-     * @param value
+     * @param item a ser anadido de primero a la lista
      */
     public void addFirst(E value);
    // post: value is added to beginning of list
 
     /**
      *
-     * @param value
+     * @param value a ser anadido al final de la lista
      */
     public void addLast(E value);
    // post: value is added to end of list
 
     /**
      *
-     * @return
+     * @return el primer elemento
      */
     public E getFirst();
    // pre: list is not empty
@@ -53,7 +53,7 @@ public interface List<E>
 
     /**
      *
-     * @return
+     * @return el ultimo elemento
      */
     public E getLast();
    // pre: list is not empty
@@ -61,7 +61,7 @@ public interface List<E>
 
     /**
      *
-     * @return
+     * @return el primer elemento
      */
     public E removeFirst();
    // pre: list is not empty
@@ -69,7 +69,7 @@ public interface List<E>
 
     /**
      *
-     * @return
+     * @return el ultimo elemento
      */
     public E removeLast();
    // pre: list is not empty
@@ -77,8 +77,8 @@ public interface List<E>
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a ser quitado
+     * @return el valor quitado
      */
     public E remove(E value);
    // post: removes and returns element equal to value
@@ -86,14 +86,14 @@ public interface List<E>
 
     /**
      *
-     * @param value
+     * @param value a ser anadido
      */
     public void add(E value);
    // post: value is added to tail of list
 
     /**
      *
-     * @return
+     * @return el valor quitado
      */
     public E remove();
    // pre: list has at least one element
@@ -101,7 +101,7 @@ public interface List<E>
 
     /**
      *
-     * @return
+     * @return el ultimo elemento
      */
     public E get();
    // pre: list has at least one element
@@ -109,8 +109,8 @@ public interface List<E>
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return verdadero si lo encontro
      */
     public boolean contains(E value);
    // pre: value is not null
@@ -118,8 +118,8 @@ public interface List<E>
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return index de su posicion
      */
     public int indexOf(E value);
    // pre: value is not null
@@ -128,8 +128,8 @@ public interface List<E>
 
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return lugar donde se encontro
      */
     public int lastIndexOf(E value);
    // pre: value is not null
@@ -138,8 +138,8 @@ public interface List<E>
 
     /**
      *
-     * @param i
-     * @return
+     * @param i posicion a buscar
+     * @return lo que hay en esa posicion
      */
     public E get(int i);
    // pre: 0 <= i < size()

@@ -1,7 +1,7 @@
 
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza y Sebastian Galindo;
  */
 public class StackFactory extends AbstractFactory{
      

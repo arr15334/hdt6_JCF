@@ -3,7 +3,7 @@
 /**
  *
  * @author arriaza96
- * @param <E>
+ * @param <E> el tipo de dato
  */
 public abstract class AbstractList<E>
        implements List<E>
@@ -19,7 +19,7 @@ public abstract class AbstractList<E>
 
     /**
      *
-     * @return
+     * @return true si la lista esta vacia
      */
     public boolean isEmpty()
    // post: returns true iff list has no elements
@@ -29,8 +29,8 @@ public abstract class AbstractList<E>
   
     /**
      *
-     * @param value
-     * @return
+     * @param value a buscar
+     * @return verdadero si esta en la lista
      */
     public boolean contains(E value)
   // pre: value is not null

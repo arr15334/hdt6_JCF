@@ -3,7 +3,7 @@ import java.util.Iterator;
 
 /**
  *
- * @author arriaza96
+ * @author codigo tomado de BlackBoard pero modificado
  * @param <E> el tipo de dato
  */
 public class SinglyLinkedList<E> extends AbstractList<E> implements Stack<E>

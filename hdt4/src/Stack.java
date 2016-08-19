@@ -1,7 +1,7 @@
 
 /**
  *
- * @author Rodrigo Arriaza y Sebastian Galindo
+ * @author codigo tomado de BlackBoard  
  * @param <E> tipo de dato
  */
 public interface Stack<E> 

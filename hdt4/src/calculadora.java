@@ -7,7 +7,7 @@
 
 /**
  *
- * @author Alejandro Chaclan
+ * @author codigo tomado del ejercicio 2, hecho por Alejandro Chaclan, Rodrigo Arriaza y Sebastian Galindo
  */
 public class calculadora {
    

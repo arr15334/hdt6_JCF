@@ -1,8 +1,8 @@
 
 /**
  *
- * @author arriaza96
- * @param <E>
+ * @author Codigo tomado de BlackBoard
+ * @param <E> el tipo de dato
  */
 public class Node<E>
 {
@@ -44,7 +44,7 @@ public class Node<E>
 
     /**
      *
-     * @return
+     * @return el nextElement
      */
     public Node<E> next()
    // post: returns reference to next value in list

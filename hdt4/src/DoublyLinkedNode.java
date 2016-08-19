@@ -24,9 +24,9 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @param v
-     * @param next
-     * @param previous
+     * @param v dato
+     * @param next nodo siguiente
+     * @param previous nodo anterior
      */
     public DoublyLinkedNode(E v,
                         DoublyLinkedNode<E> next,
@@ -53,7 +53,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @return
+     * @return el siguiente elemento
      */
     public DoublyLinkedNode<E> next(){
     return nextElement;
@@ -61,7 +61,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @return
+     * @return el elemento previo
      */
     public DoublyLinkedNode<E> previous(){
     return previousElement;
@@ -69,7 +69,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @param item
+     * @param item a ser puesto
      */
     public void setNext(DoublyLinkedNode<E> item){
         nextElement = item;
@@ -77,7 +77,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @return
+     * @return el valor
      */
     public E value(){
         return data;
@@ -85,7 +85,7 @@ public class DoublyLinkedNode<E>
 
     /**
      *
-     * @param item
+     * @param item a ser puesto 
      */
     public void setPrevious(DoublyLinkedNode<E> item){
         previousElement = item;
