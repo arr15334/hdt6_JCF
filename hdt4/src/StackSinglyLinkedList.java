@@ -8,12 +8,12 @@
  *
  * @author Rodrigo Arriaza y Sebastian Galindo
  */
-public class StackSinglyLinkedList<E> extends AbstractStack<E> {
+public class StackSinglyLinkedList<E> implements Stack<E> {
 
     protected SinglyLinkedList<E> data;
     
     public StackSinglyLinkedList (){
-        
+        data = new SinglyLinkedList<E>();
     }
     
     @Override
@@ -23,17 +23,17 @@ public class StackSinglyLinkedList<E> extends AbstractStack<E> {
 
     @Override
     public void push(E item) {
-        data.add(item);
+        data.addFirst(item);
     }
 
     @Override
     public E pop() {
-        return data.remove(size()-1); 
+        return data.removeFirst(); 
     }
 
     @Override
     public E peek() {
-        return data.get(size()-1); 
+        return data.getFirst(); 
     }
 
     @Override

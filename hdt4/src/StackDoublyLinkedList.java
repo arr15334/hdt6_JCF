@@ -8,12 +8,12 @@
  *
  * @author Rodrigo Arriaza y Sebastián Galindo
  */
-public class StackDoublyLinkedList<E> extends AbstractStack<E> {
+public class StackDoublyLinkedList<E> implements Stack<E> {
 
     protected DoublyLinkedList<E> data;
     
     public StackDoublyLinkedList (){
-        
+        data = new DoublyLinkedList<E>();
     }
     
     @Override
@@ -23,17 +23,17 @@ public class StackDoublyLinkedList<E> extends AbstractStack<E> {
 
     @Override
     public void push(E item) {
-        data.add(item);
+        data.addFirst(item);
     }
 
     @Override
     public E pop() {
-        return data.remove(size()-1); 
+        return data.removeLast(); 
     }
 
     @Override
     public E peek() {
-        return data.get(size()-1); 
+        return data.getLast(); 
     }
 
     @Override

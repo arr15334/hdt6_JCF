@@ -8,12 +8,12 @@
  *
  * @author Rodrigo Arriaza y Sebastián Galindo
  */
-public class StackCircularList<E> extends AbstractStack<E> {
+public class StackCircularList<E> implements Stack<E> {
 
     protected CircularList<E> data;
     
     public StackCircularList (){
-        
+        data = new CircularList<E>();
     }
     
     @Override
@@ -23,17 +23,17 @@ public class StackCircularList<E> extends AbstractStack<E> {
 
     @Override
     public void push(E item) {
-        data.add(item);
+        data.addFirst(item);
     }
 
     @Override
     public E pop() {
-        return data.remove(size()-1); 
+        return data.removeFirst(); 
     }
 
     @Override
     public E peek() {
-        return data.get(size()-1); 
+        return data.getFirst(); 
     }
 
     @Override

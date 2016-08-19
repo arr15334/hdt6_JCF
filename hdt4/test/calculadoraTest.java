@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -78,7 +77,7 @@ public class calculadoraTest {
     public void testEvalSingle() {
         System.out.println("single");
         String s = "39/5*2+";
-        Stack<Double> stack = new SinglyLinkedList();
+        Stack<Double> stack = new StackSinglyLinkedList();
         calculadora instance = calculadora.getInstance();
         double expResult = 17.0;
         double result = instance.eval(s, stack);
@@ -88,7 +87,7 @@ public class calculadoraTest {
     public void testEvalDouble() {
         System.out.println("double");
         String s = "72-4*3+";
-        Stack<Double> stack = new DoublyLinkedList();
+        Stack<Double> stack = new StackDoublyLinkedList();
         calculadora instance = calculadora.getInstance();
         double expResult = 23.0;
         double result = instance.eval(s, stack);
@@ -98,7 +97,7 @@ public class calculadoraTest {
     public void testEvalCircular() {
         System.out.println("circular");
         String s = "27+4*3+";
-        Stack<Double> stack = new CircularList();
+        Stack<Double> stack = new StackCircularList();
         calculadora instance = calculadora.getInstance();
         double expResult = 39.0;
         double result = instance.eval(s, stack);

@@ -4,9 +4,9 @@ import java.util.Iterator;
 /**
  *
  * @author Rodrigo Arriaza y Sebastian Galindo
- * @param <E> el tipo de dato
+ * @param <E> tipo de dato
  */
-public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
+public class DoublyLinkedList<E> extends AbstractList<E>
 {
     protected int count;
     protected DoublyLinkedNode<E> head;
@@ -86,6 +86,11 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
         return temp.value();
     }
 
+     @Override
+    public E getLast() {
+        return tail.data;
+    }
+    /*
     public void push(E item){
         addFirst(item);
     }
@@ -99,7 +104,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
     public int size() {
         return count;
     }
-
+*/
     //*****************************estos metodos no fueron implementados
     @Override
     public void clear() {
@@ -110,12 +115,7 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
     public E getFirst() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    @Override
-    public E getLast() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        
     @Override
     public E remove(E value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -170,5 +170,15 @@ public class DoublyLinkedList<E> extends AbstractList<E> implements List<E>
     @Override
     public boolean isEmpty() {
         return size()==0;
+    }
+
+    @Override
+    public int size() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean contains(E value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -6,7 +6,7 @@ import java.util.Iterator;
  * @author codigo tomado de BlackBoard pero modificado
  * @param <E> el tipo de dato
  */
-public class SinglyLinkedList<E> extends AbstractList<E> implements List<E>
+public class SinglyLinkedList<E> extends AbstractList<E>
 {
 
     /**
@@ -138,6 +138,7 @@ reset();
 current = head;
 }
 //******************* implementaciones del stack
+    /*
     public void push(E item){
         addFirst(item);
     }
@@ -147,7 +148,7 @@ current = head;
     public E peek () {
         return head.data;
     }
-    
+    */
     //*****************estos metodos no necesitan ser implementados
     @Override
     public void clear() {
