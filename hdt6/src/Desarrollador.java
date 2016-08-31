@@ -10,15 +10,15 @@
  */
 public class Desarrollador {
     private String name;
-    private boolean esJava;
-    private boolean esWeb;
-    private boolean esCelular;
+    private boolean JavaDeveloper;
+    private boolean WebDeveloper;
+    private boolean CelularDeveloper;
 
-    public Desarrollador(String name, boolean esJava, boolean esWeb, boolean esCelular) {
+    public Desarrollador(String name, boolean JavaDeveloper, boolean WebDeveloper, boolean CelularDeveloper) {
         this.name = name;
-        this.esJava = esJava;
-        this.esWeb = esWeb;
-        this.esCelular = esCelular;
+        this.JavaDeveloper = JavaDeveloper;
+        this.WebDeveloper = WebDeveloper;
+        this.CelularDeveloper = CelularDeveloper;
     }
 
     public String getName() {
@@ -29,29 +29,28 @@ public class Desarrollador {
         this.name = name;
     }
 
-    public boolean isEsJava() {
-        return esJava;
+    public boolean isJavaDeveloper() {
+        return JavaDeveloper;
     }
 
-    public void setEsJava(boolean esJava) {
-        this.esJava = esJava;
+    public void setJavaDeveloper(boolean JavaDeveloper) {
+        this.JavaDeveloper = JavaDeveloper;
     }
 
-    public boolean isEsWeb() {
-        return esWeb;
+    public boolean isWebDeveloper() {
+        return WebDeveloper;
     }
 
-    public void setEsWeb(boolean esWeb) {
-        this.esWeb = esWeb;
+    public void setWebDeveloper(boolean WebDeveloper) {
+        this.WebDeveloper = WebDeveloper;
     }
 
-    public boolean isEsCelular() {
-        return esCelular;
+    public boolean isCelularDeveloper() {
+        return CelularDeveloper;
     }
 
-    public void setEsCelular(boolean esCelular) {
-        this.esCelular = esCelular;
+    public void setCelularDeveloper(boolean CelularDeveloper) {
+        this.CelularDeveloper = CelularDeveloper;
     }
-    
     
 }
