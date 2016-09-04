@@ -16,11 +16,12 @@ import javax.swing.JOptionPane;
 
 public class Control {
  
-    Factory laFactory;
+    Factory laFactory = new Factory();
     Desarrollador miDesarrollador;
-    Operaciones misOperaciones;
+    Operaciones misOperaciones = new Operaciones();
     Set<Desarrollador> miSet;
-    ArrayList miArrayList;
+    ArrayList miArrayList = new ArrayList();
+    
     public int x;
 
     public Control() {

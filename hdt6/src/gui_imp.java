@@ -16,7 +16,6 @@ public class gui_imp extends javax.swing.JFrame {
     /**
      * Creates new form gui_imp
      */
-    Control miControl = new Control();
     public gui_imp() {
         initComponents();
     }
@@ -134,26 +133,23 @@ public class gui_imp extends javax.swing.JFrame {
 
     private void btnContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuarActionPerformed
         // TODO add your handling code here:
+        gui_main siguiente = new gui_main();
         if(rbn_hashset.isSelected()){
             String imp="HashSet";
-            miControl.creacion(imp);
-            //Llamando a la ventana siguiente
-            gui_main siguiente = new gui_main();
+            siguiente.miControl.creacion(imp);
             siguiente.setVisible(true);
             this.setVisible(false);
         }else if(rbn_treeset.isSelected()){
-            String implementacion="TreeSet";
-            miControl.creacion(implementacion);
+            String imp="TreeSet";
+            siguiente.miControl.creacion(imp);
             //lamando a la siguiente ventana
-            gui_main siguiente = new gui_main();
             siguiente.setVisible(true);
             this.setVisible(false);
         }else if(rbn_linkedhashset.isSelected()){
-            String implementacion="LinkedHashSet";
+            String imp="LinkedHashSet";
             //Llamando al método que crea el tipo de Set dependiendo de la implementacion seleccionada
-            miControl.creacion(implementacion);
+            siguiente.miControl.creacion(imp);
             //Llamando a la siguiente ventana
-            gui_main siguiente = new gui_main();
             siguiente.setVisible(true);
             this.setVisible(false);
         }else{

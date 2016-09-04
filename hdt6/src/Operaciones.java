@@ -20,7 +20,7 @@ public class Operaciones<E> {
     
     //pregunta 1: experiencia en las tres
     public ArrayList<String> javawebcelular(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
