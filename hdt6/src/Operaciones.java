@@ -32,7 +32,7 @@ public class Operaciones<E> {
     }
     //pregunta 2: experiencia en java pero no en web (no importa la exp en celulares)
     public ArrayList<String> javanotweb(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
@@ -44,7 +44,7 @@ public class Operaciones<E> {
     }
     //pregunta 3: exp en web y celulares pero no en java
     public ArrayList<String> webcelularnotjava(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
@@ -57,7 +57,7 @@ public class Operaciones<E> {
     
     //pregunta 4: web o celular, pero no en java
     public ArrayList<String> weborcelularnotjava(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
@@ -71,7 +71,7 @@ public class Operaciones<E> {
     //pregunta 5: java subconjunto de Web
     public String javasubweb(Set<Desarrollador> set){
         String cadena = null;
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         ArrayList<String> java = new ArrayList();
         ArrayList<String> web = new ArrayList();
@@ -100,14 +100,13 @@ public class Operaciones<E> {
                 }
             }
         }
-
     return cadena;
     }
     
     
      //pregunta 4: web o celular, pero no en java
     public ArrayList<String> masgrande(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         ArrayList<String> java = new ArrayList();
         ArrayList<String> web = new ArrayList();
