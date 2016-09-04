@@ -10,6 +10,7 @@ import java.util.TreeSet;
  * @param <E>
  */
 public class Factory<E> {
+    
     public Set<E> makeFactory(String factoryType){
         Set<E> elSet = null;
         if(factoryType.equals("HashSet")){

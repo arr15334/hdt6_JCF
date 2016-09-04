@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Set;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,8 +16,8 @@ import java.util.Set;
 
 public class Control {
  
-    Factory laFactory = null;
-    Desarrollador miDesarrollador = null;
+    Factory laFactory;
+    Desarrollador miDesarrollador;
     Operaciones misOperaciones;
     Set<Desarrollador> miSet;
     ArrayList miArrayList;
@@ -27,7 +28,9 @@ public class Control {
 
     
     public void creacion(String tipoSet){
-        miSet = laFactory.makeFactory(tipoSet);  
+        String var = tipoSet;
+        //JOptionPane.showMessageDialog(null,var);
+        miSet = laFactory.makeFactory(var);  
     }
     
     public void agregar(boolean web, boolean java, boolean celular, String name){
