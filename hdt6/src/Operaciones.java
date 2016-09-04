@@ -24,9 +24,7 @@ public class Operaciones<E> {
         Desarrollador[] arreglo = set.toArray(new Desarrollador[set.size()]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
-        //JOptionPane.showMessageDialog(null,"COÑOOOOOO");
-        
-        
+        JOptionPane.showMessageDialog(null, arreglo.length);
         for (int i =0 ; i>n ; i++){
             if (arreglo[i].isCelularDeveloper() & arreglo[i].isJavaDeveloper() & arreglo[i].isWebDeveloper()){
                 resultado.add(arreglo[i].toString());
