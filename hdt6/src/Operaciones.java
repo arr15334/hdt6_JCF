@@ -32,7 +32,7 @@ public class Operaciones<E> {
     }
     //pregunta 2: experiencia en java pero no en web (no importa la exp en celulares)
     public ArrayList<String> javanotweb(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
