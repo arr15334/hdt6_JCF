@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  *
  * @author Rodrigo Arriaza;
  */
-public class Desarrollador {
+public class Desarrollador implements Comparable<Desarrollador>{
     private String name;
     private boolean JavaDeveloper;
     private boolean WebDeveloper;
@@ -51,6 +47,16 @@ public class Desarrollador {
 
     public void setCelularDeveloper(boolean CelularDeveloper) {
         this.CelularDeveloper = CelularDeveloper;
+    }
+
+    @Override
+    public String toString() {
+        return "Desarrollador{" + name + '}';
+    }
+
+    @Override
+    public int compareTo(Desarrollador o) {
+        return name.compareTo(o.name); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

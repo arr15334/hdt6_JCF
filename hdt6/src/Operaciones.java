@@ -19,23 +19,30 @@ public class Operaciones<E> {
     }
     
     //pregunta 1: experiencia en las tres
-    public ArrayList<String> javawebcelular(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
-        ArrayList<String> resultado = new ArrayList();
+    public String javawebcelular(Set<Desarrollador> set){
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[set.size()]);
+        String resultado = "";//+arreglo[1].toString()+arreglo[1].isWebDeveloper()+arreglo[1].isCelularDeveloper()+arreglo[1].isJavaDeveloper();
         int n = arreglo.length;
-        for (int i =0 ; i>n ; i++){
-            if (arreglo[i].isCelularDeveloper() & arreglo[i].isJavaDeveloper() & arreglo[i].isWebDeveloper()){
-                resultado.add(arreglo[i].toString());
+        //rellenar lo que esta vacio
+        /*
+        for (int i =0 ; i<n ; i++){
+            if (arreglo[i]==null){
+                arreglo[i]=new Desarrollador("", false, false, false);
+            }
+        }*/
+        for (int i =0 ; i<n ; i++){
+            if (arreglo[i].isCelularDeveloper() && arreglo[i].isJavaDeveloper() && arreglo[i].isWebDeveloper()){
+                resultado =  resultado+ ", "+arreglo[i].toString();
             }
         }
     return resultado;
     }
     //pregunta 2: experiencia en java pero no en web (no importa la exp en celulares)
     public ArrayList<String> javanotweb(Set<Desarrollador> set){
-        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[set.size()]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
-        for (int i =0 ; i>n ; i++){
+        for (int i =0 ; i<n ; i++){
             if (arreglo[i].isJavaDeveloper() & !arreglo[i].isWebDeveloper()){
                 resultado.add(arreglo[i].toString());
             }
@@ -44,7 +51,7 @@ public class Operaciones<E> {
     }
     //pregunta 3: exp en web y celulares pero no en java
     public ArrayList<String> webcelularnotjava(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
@@ -57,7 +64,7 @@ public class Operaciones<E> {
     
     //pregunta 4: web o celular, pero no en java
     public ArrayList<String> weborcelularnotjava(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
         for (int i =0 ; i>n ; i++){
@@ -71,7 +78,7 @@ public class Operaciones<E> {
     //pregunta 5: java subconjunto de Web
     public String javasubweb(Set<Desarrollador> set){
         String cadena = null;
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         ArrayList<String> java = new ArrayList();
         ArrayList<String> web = new ArrayList();
@@ -107,7 +114,7 @@ public class Operaciones<E> {
     
      //pregunta 4: web o celular, pero no en java
     public ArrayList<String> masgrande(Set<Desarrollador> set){
-        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
         ArrayList<String> resultado = new ArrayList();
         ArrayList<String> java = new ArrayList();
         ArrayList<String> web = new ArrayList();

@@ -1,4 +1,7 @@
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.swing.JOptionPane;
 
 /*
@@ -17,11 +20,11 @@ public class gui_main extends javax.swing.JFrame {
      * Creates new form gui_main
      */
     Control miControl = new Control();
+    Operaciones ops = new Operaciones();
     int cont;
+    Set<Desarrollador> unSet = new TreeSet(); 
     public gui_main() {
         initComponents();
-        
-        
         
     }
 
@@ -177,7 +180,11 @@ public class gui_main extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Porfavor ingrese un nombre", "Advertencia", JOptionPane.ERROR_MESSAGE);
                     cont=0;
                 }else{
-                     miControl.agregar(chb_web.isSelected(),chb_java.isSelected(), chb_celulares.isSelected() , txt_nombre.getText());
+                    //miControl.agregar(chb_web.isSelected(),chb_java.isSelected(), chb_celulares.isSelected() , txt_nombre.getText());
+                    
+                    Desarrollador des = new Desarrollador(txt_nombre.getText(), chb_web.isSelected(),chb_java.isSelected(), chb_celulares.isSelected() );
+                     unSet.add(des);
+                    
                     chb_web.setSelected(false);
                     chb_java.setSelected(false);
                     chb_celulares.setSelected(false);
@@ -192,7 +199,8 @@ public class gui_main extends javax.swing.JFrame {
 
     private void btn_reporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteActionPerformed
         // código del boton reporte
-        JOptionPane.showMessageDialog(null,miControl.reporte());
+        //JOptionPane.showMessageDialog(null,miControl.reporte());
+        JOptionPane.showMessageDialog(null, ops.javawebcelular(unSet));
     }//GEN-LAST:event_btn_reporteActionPerformed
 
     /**
