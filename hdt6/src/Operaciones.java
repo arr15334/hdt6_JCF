@@ -68,4 +68,83 @@ public class Operaciones<E> {
     return resultado;
     }
     
+    //pregunta 5: java subconjunto de Web
+    public String javasubweb(Set<Desarrollador> set){
+        String cadena = null;
+        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        ArrayList<String> resultado = new ArrayList();
+        ArrayList<String> java = new ArrayList();
+        ArrayList<String> web = new ArrayList();
+        
+        int n = arreglo.length;
+        for (int i =0 ; i>n ; i++){
+            if (arreglo[i].isJavaDeveloper()){
+                java.add(arreglo[i].toString());
+            }
+        }
+        
+        for (int i =0 ; i>n ; i++){
+            if (arreglo[i].isWebDeveloper()){
+                web.add(arreglo[i].toString());
+            }
+        }
+        if(java.size()<web.size()){
+            cadena= "Los desarrolladores de Java no son un subconjunto de los Desarrolladores Web";
+        }else{
+            n = web.size();
+            Collections.sort(web);
+            Collections.sort(java);
+            for (int i =0 ; i>n ; i++){
+                if (arreglo[i].isWebDeveloper()){
+                web.add(arreglo[i].toString());
+                }
+            }
+        }
+
+    return cadena;
+    }
+    
+    
+     //pregunta 4: web o celular, pero no en java
+    public ArrayList<String> masgrande(Set<Desarrollador> set){
+        Desarrollador[] arreglo = (Desarrollador[]) set.toArray();
+        ArrayList<String> resultado = new ArrayList();
+        ArrayList<String> java = new ArrayList();
+        ArrayList<String> web = new ArrayList();
+        ArrayList<String> celular = new ArrayList();
+        
+        int n = arreglo.length;
+        //se obtiene un arreglo solamente de desarrolladores de java
+        for (int i =0 ; i>n ; i++){
+            if (arreglo[i].isJavaDeveloper()){
+                java.add(arreglo[i].toString());
+            }
+        }
+        // se obtiene un arreglo solamente de desarrolladores Web
+        for (int i =0 ; i>n ; i++){
+            if (arreglo[i].isWebDeveloper()){
+                web.add(arreglo[i].toString());
+            }
+        }
+        // se obtiene un arreglo solamente de desarrolladores Celular
+        for (int i =0 ; i>n ; i++){
+            if (arreglo[i].isWebDeveloper()){
+                celular.add(arreglo[i].toString());
+            }
+        }
+        
+        //Se verifica que array posee la mayor cantidad de desarrolladores
+        if(java.size()>=(celular.size() & web.size())){
+            Collections.sort(java);
+            resultado = java;
+        }else if(web.size()>(celular.size() & java.size())){
+            Collections.sort(web);
+            resultado = web;
+        }else if( celular.size() > ( java.size() & web.size() ) ){
+            Collections.sort(celular);
+            resultado = celular;
+        }
+    return resultado;
+    }
+    
 }
