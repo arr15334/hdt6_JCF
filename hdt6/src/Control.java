@@ -45,35 +45,35 @@ public class Control {
 
         //Pregunta 1: Se agregan los desarrolladores con experiencia en Java, WEb y Celular al reporte
         miArrayList = misOperaciones.javawebcelular(miSet);
-        reporte="Los desarrolladores con experiencia en java, web y celulares son: \n";
+        reporte=reporte + "Los desarrolladores con experiencia en java, web y celulares son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 2: Se agregan los desarrolladores con experiencia en Java pero que no tienen experiencia en Web
         miArrayList = misOperaciones.javanotweb(miSet);
-        reporte="Los desarrolladores con experiencia en Java pero no Web son: \n";
+        reporte=reporte + "Los desarrolladores con experiencia en Java pero no Web son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 3: Se agregan los desarrolladores con experiencia Web y Celular pero no Java
         miArrayList = misOperaciones.webcelularnotjava(miSet);
-        reporte="Los desarrolladores con experiencia Web y Celular pero no en Java son: \n";
+        reporte=reporte + "Los desarrolladores con experiencia Web y Celular pero no en Java son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 4: Se agregan los desarrolladores con experiencia Web y Celular pero no Java
         miArrayList = misOperaciones.weborcelularnotjava(miSet);
-        reporte="Los desarrolladores con experiencia Web o Celular pero no en Java son: \n";
+        reporte=reporte + "Los desarrolladores con experiencia Web o Celular pero no en Java son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 4: Se agregan los desarrolladores con experiencia Web y Celular pero no Java
         miArrayList = misOperaciones.masgrande(miSet);
-        reporte="El array mas grande ordenado de forma ascendente es: \n";
+        reporte=reporte +"El array mas grande ordenado de forma ascendente es: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }

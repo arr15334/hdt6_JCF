@@ -52,5 +52,10 @@ public class Desarrollador {
     public void setCelularDeveloper(boolean CelularDeveloper) {
         this.CelularDeveloper = CelularDeveloper;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
     
 }

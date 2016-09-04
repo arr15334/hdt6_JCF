@@ -1,5 +1,6 @@
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,12 +21,16 @@ public class Operaciones<E> {
     
     //pregunta 1: experiencia en las tres
     public ArrayList<String> javawebcelular(Set<Desarrollador> set){
-        Desarrollador[] arreglo = set.toArray(new Desarrollador[50]);
+        Desarrollador[] arreglo = set.toArray(new Desarrollador[set.size()]);
         ArrayList<String> resultado = new ArrayList();
         int n = arreglo.length;
+        //JOptionPane.showMessageDialog(null,"COÑOOOOOO");
+        
+        
         for (int i =0 ; i>n ; i++){
             if (arreglo[i].isCelularDeveloper() & arreglo[i].isJavaDeveloper() & arreglo[i].isWebDeveloper()){
                 resultado.add(arreglo[i].toString());
+                
             }
         }
     return resultado;
