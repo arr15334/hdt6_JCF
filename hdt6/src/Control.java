@@ -1,5 +1,7 @@
 
+import java.util.AbstractSet;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 import javax.swing.JOptionPane;
 
@@ -16,11 +18,11 @@ import javax.swing.JOptionPane;
 
 public class Control {
  
-    Factory laFactory;
+    Factory laFactory = new Factory();
     Desarrollador miDesarrollador;
-    Operaciones misOperaciones;
+    Operaciones misOperaciones = new Operaciones();
     Set<Desarrollador> miSet;
-    ArrayList miArrayList;
+    ArrayList<String> miArrayList = new ArrayList();
     public int x;
 
     public Control() {
@@ -28,9 +30,9 @@ public class Control {
 
     
     public void creacion(String tipoSet){
-        String var = tipoSet;
+        
         //JOptionPane.showMessageDialog(null,var);
-        miSet = laFactory.makeFactory(var);  
+        miSet = laFactory.makeFactory(tipoSet);  
     }
     
     public void agregar(boolean web, boolean java, boolean celular, String name){
