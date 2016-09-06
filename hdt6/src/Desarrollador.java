@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza, Sebastian Galindo;
  */
 public class Desarrollador implements Comparable<Desarrollador>{
     private String name;

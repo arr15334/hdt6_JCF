@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sebastián
+ * @author Sebastián Galindo, Rodrigo Arriaza
  */
 
 public class Control {

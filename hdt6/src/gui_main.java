@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sebastián
+ * @author Sebastián Galindo, Rodrigo Arriaza
  */
 public class gui_main extends javax.swing.JFrame {
 

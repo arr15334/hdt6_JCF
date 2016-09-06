@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza, Sebastian Galindo;
  * @param <E>
  */
 public class Factory<E> {

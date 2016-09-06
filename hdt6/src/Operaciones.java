@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  *
- * @author Rodrigo Arriaza;
+ * @author Rodrigo Arriaza, Sebastián Galindo;
  */
 public class Operaciones<E> {
     Set<E> elSet;
