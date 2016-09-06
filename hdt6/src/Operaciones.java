@@ -89,23 +89,47 @@ public class Operaciones<E> {
     }
     
     //pregunta 5: java subconjunto de Web
-    public String javasubweb(Set<Desarrollador> set){
+    public String subconjunto (Set<Desarrollador> setjava, Set<Desarrollador> setweb){
+        if (setweb.containsAll(setjava)){
+            return "Si es subconjunto";
+        } 
+        else {return "No es subconjunto";
+        }
+    }
+    public Set<Desarrollador> javadevs(Set<Desarrollador> set, Set<Desarrollador> java){
+        for (Desarrollador des : set){
+            if (des.isJavaDeveloper()){
+                java.add(des);
+            }
+        }
+        return java;
+    }
+    public Set<Desarrollador> webdevs(Set<Desarrollador> set, Set<Desarrollador> web){
+        for (Desarrollador des : set){
+            if (des.isJavaDeveloper()){
+                web.add(des);
+            }
+        }
+        return web;
+    }
+    /*public String javasubweb(Set<Desarrollador> set){
         String cadena = null;
         Desarrollador[] arreglo = set.toArray(new Desarrollador[set.size()]);
         ArrayList<String> resultado = new ArrayList();
         ArrayList<String> java = new ArrayList();
         ArrayList<String> web = new ArrayList();
+        Set<Desarrollador> setjava;
         
         int n = arreglo.length;
-        for (int i =0 ; i<n ; i++){
-            if (arreglo[i].isJavaDeveloper()){
-                java.add(arreglo[i].toString());
+        for (Desarrollador des : set){
+            if (des.isJavaDeveloper()){
+                java.add(des.toString());
             }
         }
         
-        for (int i =0 ; i<n ; i++){
-            if (arreglo[i].isWebDeveloper()){
-                web.add(arreglo[i].toString());
+        for (Desarrollador des : set){
+            if (des.isWebDeveloper()){
+                web.add(des.toString());
             }
         }
         if(java.size()<web.size()){
@@ -121,7 +145,7 @@ public class Operaciones<E> {
             }
         }
     return cadena;
-    }
+    }*/
     
     
      //pregunta 6: dice cual es el conjunto mas grande

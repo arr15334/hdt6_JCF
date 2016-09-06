@@ -25,6 +25,8 @@ public class gui_main extends javax.swing.JFrame {
     Operaciones ops = new Operaciones();
     int cont;
     Set<Desarrollador> unSet; 
+    Set<Desarrollador> unSetWeb; 
+    Set<Desarrollador> unSetJava; 
     public gui_main() {
         initComponents();
         jPanel3.setVisible(false);
@@ -69,6 +71,7 @@ public class gui_main extends javax.swing.JFrame {
         jLabel5.setText("Seleccione que tipo de Set quiere usar");
 
         buttonGroup1.add(rbn_hashset);
+        rbn_hashset.setSelected(true);
         rbn_hashset.setText("HashSet");
 
         buttonGroup1.add(rbn_treeset);
@@ -180,35 +183,33 @@ public class gui_main extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(btn_agregar)
                                     .addGap(26, 26, 26)
                                     .addComponent(btn_reporte))
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addGap(292, 292, 292)
-                                    .addComponent(btn_salir))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(45, 45, 45)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(chb_web, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(chb_java)
-                                        .addComponent(chb_celulares)))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(10, 10, 10)
-                                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(btn_salir)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(45, 45, 45)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(chb_web, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(chb_java)
+                                    .addComponent(chb_celulares)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(10, 10, 10)
+                                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(11, 11, 11))
         );
         jPanel3Layout.setVerticalGroup(
@@ -322,6 +323,9 @@ public class gui_main extends javax.swing.JFrame {
             resultado=resultado+it.next()+", ";
         }
         JOptionPane.showMessageDialog(null, resultado);
+        unSetJava = ops.javadevs(unSet, unSetJava);
+        unSetWeb = ops.webdevs(unSet, unSetWeb);
+        JOptionPane.showMessageDialog(null, ops.subconjunto(unSetJava, unSetWeb));
     }//GEN-LAST:event_btn_reporteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -332,12 +336,15 @@ public class gui_main extends javax.swing.JFrame {
         if(rbn_hashset.isSelected()){
             String imp="HashSet";
             unSet = miControl.creacion(imp);
-            
+            unSetWeb=miControl.creacion(imp);
+            unSetJava=miControl.creacion(imp);
             //siguiente.setVisible(true);
             //this.setVisible(false);
         }else if(rbn_treeset.isSelected()){
             String imp="TreeSet";
             unSet = miControl.creacion(imp);
+            unSetWeb=miControl.creacion(imp);
+            unSetJava=miControl.creacion(imp);
             //lamando a la siguiente ventana
             //siguiente.setVisible(true);
             //this.setVisible(false);
@@ -345,12 +352,15 @@ public class gui_main extends javax.swing.JFrame {
             String imp="LinkedHashSet";
             //Llamando al método que crea el tipo de Set dependiendo de la implementacion seleccionada
             unSet = miControl.creacion(imp);
+            unSetWeb=miControl.creacion(imp);
+            unSetJava=miControl.creacion(imp);
             //Llamando a la siguiente ventana
             //siguiente.setVisible(true);
             //this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(null, "Porfavor seleccione un tipo de implementacion.", "Advertencia", JOptionPane.ERROR_MESSAGE );
         }
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
