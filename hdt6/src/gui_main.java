@@ -322,10 +322,23 @@ public class gui_main extends javax.swing.JFrame {
         while (it.hasNext()){
             resultado=resultado+it.next()+", ";
         }
-        JOptionPane.showMessageDialog(null, resultado);
-        unSetJava = ops.javadevs(unSet, unSetJava);
-        unSetWeb = ops.webdevs(unSet, unSetWeb);
-        JOptionPane.showMessageDialog(null, ops.subconjunto(unSetJava, unSetWeb));
+        JOptionPane.showMessageDialog(null, "El mas grande es: "+resultado);
+       
+        //******************************* verificar si es subconjunto
+        ArrayList<Desarrollador> javadevs = new ArrayList<Desarrollador>();
+        ArrayList<Desarrollador> webdevs = new ArrayList<Desarrollador>();
+                for (Desarrollador dev : unSet){
+                    if (dev.isJavaDeveloper()) 
+                    {
+                        javadevs.add(dev);
+                    }
+                    if (dev.isWebDeveloper()) 
+                    {
+                        webdevs.add(dev);
+                    }
+                }
+       JOptionPane.showMessageDialog(null, ops.isSubconjunto(javadevs, webdevs));
+        //******************************
     }//GEN-LAST:event_btn_reporteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

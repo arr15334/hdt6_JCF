@@ -89,28 +89,15 @@ public class Operaciones<E> {
     }
     
     //pregunta 5: java subconjunto de Web
-    public String subconjunto (Set<Desarrollador> setjava, Set<Desarrollador> setweb){
+    public String isSubconjunto (ArrayList<String> setjava, ArrayList<String> setweb){
+        String ans = "";
         if (setweb.containsAll(setjava)){
-            return "Si es subconjunto";
+            ans= "Si es subconjunto";
         } 
-        else {return "No es subconjunto";
+        else {
+            ans= "No es subconjunto";
         }
-    }
-    public Set<Desarrollador> javadevs(Set<Desarrollador> set, Set<Desarrollador> java){
-        for (Desarrollador des : set){
-            if (des.isJavaDeveloper()){
-                java.add(des);
-            }
-        }
-        return java;
-    }
-    public Set<Desarrollador> webdevs(Set<Desarrollador> set, Set<Desarrollador> web){
-        for (Desarrollador des : set){
-            if (des.isJavaDeveloper()){
-                web.add(des);
-            }
-        }
-        return web;
+        return ans;
     }
     /*public String javasubweb(Set<Desarrollador> set){
         String cadena = null;
@@ -176,14 +163,17 @@ public class Operaciones<E> {
         }
         
         //Se verifica que array posee la mayor cantidad de desarrolladores
-        if(java.size()>celular.size() && java.size()> web.size()){
+        if(java.size()>=celular.size() && java.size()>= web.size()){
+            java.add(" java, formado por\n");
             Collections.sort(java);
             resultado = java;
-        }else if(web.size()> celular.size() && web.size() >java.size() ){
+        }else if(web.size()>= celular.size() && web.size() >=java.size() ){
+            web.add(" web, formado por \n");
             Collections.sort(web);
             resultado = web;
-        }else if( celular.size() > java.size() && celular.size() > web.size() ) 
+        }else if( celular.size() >= java.size() && celular.size() >= web.size() ) 
         {
+            celular.add(" celular, formado por\n");
             Collections.sort(celular);
             resultado = celular;
         }
