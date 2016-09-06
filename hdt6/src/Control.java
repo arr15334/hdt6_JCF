@@ -74,7 +74,7 @@ public class Control {
          
          //Pregunta 6: Se indica cual es el conjunto de desarrolladores mas grande y se muestra el conjunto ordenado alfabeticamente.
          
-         reporte = reporte + "\nEl subconjunto mas grande es: " + misOperaciones.masgrande(miSet);
+         reporte = reporte + "El subconjunto mas grande es: " + misOperaciones.masgrande(miSet);
         
         
         return reporte;

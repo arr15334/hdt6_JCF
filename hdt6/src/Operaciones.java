@@ -75,10 +75,10 @@ public class Operaciones<E> {
     public String isSubconjunto (ArrayList<String> setjava, ArrayList<String> setweb){
         String ans = "";
         if (setweb.containsAll(setjava)){
-            ans= "Los Desarrolladores de Java si son subconjunto de los Desarrolladores Web\n\n";
+            ans= "Los desarrolladores de Java si son subconjunto de los desarrolladores Web\n\n";
         } 
         else {
-            ans= "Los Desarrolladores de Java no son subconjunto de los Desarrolladores Web\n\n";
+            ans= "Los desarrolladores de Java no son subconjunto de los desarrolladores Web\n\n";
         }
         return ans;
     }
