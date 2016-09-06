@@ -29,43 +29,42 @@ public class Control {
     }
 
     
-    public void creacion(String tipoSet){
+    public Set<Desarrollador> creacion(String tipoSet){
         
         //JOptionPane.showMessageDialog(null,var);
-        miSet = laFactory.makeFactory(tipoSet);  
+        return laFactory.makeFactory(tipoSet);  
     }
-    
+    /*
     public void agregar(boolean web, boolean java, boolean celular, String name){
         miDesarrollador = new Desarrollador(name, java, web, celular);
         miSet.add(miDesarrollador);    
-    }
-    
+    }*/
+    /*
     public String reporte(){ 
         String reporte="";
 
         //Pregunta 1: Se agregan los desarrolladores con experiencia en Java, WEb y Celular al reporte
-        String prueba = misOperaciones.javawebcelular(miSet);
+        String prueba1 = misOperaciones.javawebcelular(miSet);
         reporte="Los desarrolladores con experiencia en java, web y celulares son: \n";
         for(int i=0;x<miArrayList.size();i++){
-            reporte = reporte + prueba+ "\n";
+            reporte = reporte + prueba1+ "\n";
         }
         
         //Pregunta 2: Se agregan los desarrolladores con experiencia en Java pero que no tienen experiencia en Web
-        miArrayList = misOperaciones.javanotweb(miSet);
+        String prueba2 = misOperaciones.javanotweb(miSet);
         reporte=reporte+"\n Los desarrolladores con experiencia en Java pero no Web son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 3: Se agregan los desarrolladores con experiencia Web y Celular pero no Java
-        miArrayList = misOperaciones.webcelularnotjava(miSet);
-        reporte=reporte + "\nLos desarrolladores con experiencia Web y Celular pero no en Java son: \n";
+        //String prueba3= misOperaciones.webcelularnotjava(miSet);        reporte=reporte + "\nLos desarrolladores con experiencia Web y Celular pero no en Java son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
         }
         
         //Pregunta 4: Se agregan los desarrolladores con experiencia Web y Celular pero no Java
-        miArrayList = misOperaciones.weborcelularnotjava(miSet);
+        //miArrayList = misOperaciones.weborcelularnotjava(miSet);
         reporte=reporte+"Los desarrolladores con experiencia Web o Celular pero no en Java son: \n";
         for(x=0;x<miArrayList.size();x++){
             reporte = reporte + miArrayList.get(x)+ "\n";
@@ -80,7 +79,7 @@ public class Control {
         
         
         return reporte;
-    }
+    }*/
     
     
 }

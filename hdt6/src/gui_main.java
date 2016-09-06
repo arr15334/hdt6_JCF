@@ -1,5 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
 import javax.swing.JOptionPane;
@@ -22,9 +24,10 @@ public class gui_main extends javax.swing.JFrame {
     Control miControl = new Control();
     Operaciones ops = new Operaciones();
     int cont;
-    Set<Desarrollador> unSet = new TreeSet(); 
+    Set<Desarrollador> unSet; 
     public gui_main() {
         initComponents();
+        jPanel3.setVisible(false);
         
     }
 
@@ -38,23 +41,110 @@ public class gui_main extends javax.swing.JFrame {
     private void initComponents() {
 
         implementacion = new javax.swing.ButtonGroup();
-        jLabel2 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        rbn_hashset = new javax.swing.JRadioButton();
+        rbn_treeset = new javax.swing.JRadioButton();
+        rbn_linkedhashset = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txt_nombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         chb_web = new javax.swing.JCheckBox();
         chb_java = new javax.swing.JCheckBox();
         chb_celulares = new javax.swing.JCheckBox();
         btn_agregar = new javax.swing.JButton();
         btn_reporte = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Tipo de desarrollador:");
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Implementacion"));
+
+        jLabel5.setText("Seleccione que tipo de Set quiere usar");
+
+        buttonGroup1.add(rbn_hashset);
+        rbn_hashset.setText("HashSet");
+
+        buttonGroup1.add(rbn_treeset);
+        rbn_treeset.setText("TreeSet");
+
+        buttonGroup1.add(rbn_linkedhashset);
+        rbn_linkedhashset.setText("LinkedHashSet");
+
+        jButton1.setText("Continuar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rbn_hashset)
+                .addGap(18, 18, 18)
+                .addComponent(rbn_treeset)
+                .addGap(18, 18, 18)
+                .addComponent(rbn_linkedhashset)
+                .addContainerGap(74, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(131, 131, 131))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbn_hashset)
+                    .addComponent(rbn_treeset)
+                    .addComponent(rbn_linkedhashset))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel3.setName("panel2"); // NOI18N
+
+        jLabel1.setText("A continuacion ingrese los datos de sus desarroladores y presione el boton agregar para ");
+
+        jLabel4.setText("añadirlo. Luego presione el botón Reporte para ver toda la informacion ingresada.");
 
         jLabel3.setText("Nombre del desarrollador:");
+
+        jLabel2.setText("Tipo de desarrollador:");
 
         chb_web.setText("Web");
 
@@ -83,73 +173,94 @@ public class gui_main extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("A continuacion ingrese los datos de sus desarroladores y presione el boton agregar para ");
-
-        jLabel4.setText("añadirlo. Luego presione el botón Reporte para ver toda la informacion ingresada.");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(53, 53, 53)
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(btn_agregar)
                                     .addGap(26, 26, 26)
                                     .addComponent(btn_reporte))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(345, 345, 345)
-                                    .addComponent(btn_salir))
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addGap(292, 292, 292)
+                                    .addComponent(btn_salir))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(jLabel2)
                                     .addGap(45, 45, 45)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(chb_web, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(chb_java)
                                         .addComponent(chb_celulares)))
-                                .addGroup(layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(jLabel3)
                                     .addGap(10, 10, 10)
                                     .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(24, 24, 24))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addContainerGap()))))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(0, 0, Short.MAX_VALUE))))
+                .addGap(11, 11, 11))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel3))
                     .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(chb_web))
                 .addGap(3, 3, 3)
                 .addComponent(chb_java)
                 .addGap(3, 3, 3)
                 .addComponent(chb_celulares)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_agregar)
                     .addComponent(btn_reporte))
                 .addGap(6, 6, 6)
                 .addComponent(btn_salir)
-                .addGap(18, 18, 18))
+                .addGap(31, 31, 31))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -182,14 +293,13 @@ public class gui_main extends javax.swing.JFrame {
                 }else{
                     //miControl.agregar(chb_web.isSelected(),chb_java.isSelected(), chb_celulares.isSelected() , txt_nombre.getText());
                     
-                    Desarrollador des = new Desarrollador(txt_nombre.getText(), chb_web.isSelected(),chb_java.isSelected(), chb_celulares.isSelected() );
+                    Desarrollador des = new Desarrollador(txt_nombre.getText(), chb_java.isSelected(), chb_web.isSelected(),chb_celulares.isSelected() );
                      unSet.add(des);
                     
                     chb_web.setSelected(false);
                     chb_java.setSelected(false);
                     chb_celulares.setSelected(false);
                     txt_nombre.setText("");
-
                 }
             }
         }
@@ -201,7 +311,47 @@ public class gui_main extends javax.swing.JFrame {
         // código del boton reporte
         //JOptionPane.showMessageDialog(null,miControl.reporte());
         JOptionPane.showMessageDialog(null, ops.javawebcelular(unSet));
+        JOptionPane.showMessageDialog(null, ops.javanotweb(unSet));
+        JOptionPane.showMessageDialog(null, ops.webcelularnotjava(unSet));
+        JOptionPane.showMessageDialog(null, ops.weborcelularnotjava(unSet));
+        ArrayList<String> al = new ArrayList();
+        al = ops.masgrande(unSet);
+        Iterator it = al.iterator();
+        String resultado = "";
+        while (it.hasNext()){
+            resultado=resultado+it.next()+", ";
+        }
+        JOptionPane.showMessageDialog(null, resultado);
     }//GEN-LAST:event_btn_reporteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jPanel3.setVisible(true);
+        jPanel2.setVisible(false);
+        
+        if(rbn_hashset.isSelected()){
+            String imp="HashSet";
+            unSet = miControl.creacion(imp);
+            
+            //siguiente.setVisible(true);
+            //this.setVisible(false);
+        }else if(rbn_treeset.isSelected()){
+            String imp="TreeSet";
+            unSet = miControl.creacion(imp);
+            //lamando a la siguiente ventana
+            //siguiente.setVisible(true);
+            //this.setVisible(false);
+        }else if(rbn_linkedhashset.isSelected()){
+            String imp="LinkedHashSet";
+            //Llamando al método que crea el tipo de Set dependiendo de la implementacion seleccionada
+            unSet = miControl.creacion(imp);
+            //Llamando a la siguiente ventana
+            //siguiente.setVisible(true);
+            //this.setVisible(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Porfavor seleccione un tipo de implementacion.", "Advertencia", JOptionPane.ERROR_MESSAGE );
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,14 +392,23 @@ public class gui_main extends javax.swing.JFrame {
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_reporte;
     private javax.swing.JButton btn_salir;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox chb_celulares;
     private javax.swing.JCheckBox chb_java;
     private javax.swing.JCheckBox chb_web;
     public static javax.swing.ButtonGroup implementacion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton rbn_hashset;
+    private javax.swing.JRadioButton rbn_linkedhashset;
+    private javax.swing.JRadioButton rbn_treeset;
     private javax.swing.JTextField txt_nombre;
     // End of variables declaration//GEN-END:variables
 }

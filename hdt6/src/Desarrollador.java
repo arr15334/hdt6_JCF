@@ -51,7 +51,7 @@ public class Desarrollador implements Comparable<Desarrollador>{
 
     @Override
     public String toString() {
-        return "Desarrollador{" + name + '}';
+        return "" + name;
     }
 
     @Override
