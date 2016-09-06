@@ -22,8 +22,6 @@ public class Control {
     Desarrollador miDesarrollador;
     Operaciones misOperaciones = new Operaciones();
     Set<Desarrollador> miSet;
-    Set<Desarrollador> javaSet;
-    Set<Desarrollador> webSet;
     ArrayList<String> miArrayList = new ArrayList();
     public int x;
 
@@ -60,7 +58,23 @@ public class Control {
         reporte = reporte + "\n" + misOperaciones.weborcelularnotjava(miSet);
         
         //Pregunta 5: Se indica si el conjunto de desarrolladores de java es subconjunto de web y se agrega al reporte.
-        reporte = reporte + "\n" + misOperaciones.subconjunto(miSet);
+        ArrayList<Desarrollador> javadevs = new ArrayList<Desarrollador>();
+        ArrayList<Desarrollador> webdevs = new ArrayList<Desarrollador>();
+                for (Desarrollador dev : miSet){
+                    if (dev.isJavaDeveloper()) 
+                    {
+                        javadevs.add(dev);
+                    }
+                    if (dev.isWebDeveloper()) 
+                    {
+                        webdevs.add(dev);
+                    }
+                }
+         reporte = reporte + "\n"+ misOperaciones.isSubconjunto(javadevs, webdevs);
+         
+         //Pregunta 6: Se indica cual es el conjunto de desarrolladores mas grande y se muestra el conjunto ordenado alfabeticamente.
+         
+         reporte = reporte + "\nEl subconjunto mas grande es: " + misOperaciones.masgrande(miSet);
         
         
         return reporte;
