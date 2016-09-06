@@ -8,7 +8,7 @@
  *
  * @author Rodrigo Arriaza;
  */
-public class Desarrollador {
+public class Desarrollador implements Comparable<Desarrollador>{
     private String name;
     private boolean JavaDeveloper;
     private boolean WebDeveloper;
@@ -57,5 +57,12 @@ public class Desarrollador {
     public String toString() {
         return name;
     }
+
+    @Override
+    public int compareTo(Desarrollador o) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return name.compareTo(o.name);
+    }
+    
     
 }
